@@ -1,4 +1,4 @@
-from src.moldes.settings.base import Base
+from src.models.settings.base import Base
 from sqlalchemy import Column, Integer, String
 
 class Events(Base):

@@ -36,3 +36,4 @@ class EventsRepository:
             return event
          except NoResultFound:
             return None
+

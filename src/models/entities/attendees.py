@@ -1,5 +1,6 @@
 from src.models.settings.base import Base
 from sqlalchemy import Column, String, DateTime, ForeignKey
+from sqlalchemy.sql import func
 
 class Attendees(Base):
    __tablename__ = 'attendees'
@@ -8,7 +9,7 @@ class Attendees(Base):
    name = Column(String, nullable=False)
    email = Column(String, nullable=False)
    event_id = Column(String, ForeignKey('events.id'))
-   created_at = Column(DateTime, nullable=False)
+   created_at = Column(DateTime, default=func.now())
 
 
    def __repr__(self):

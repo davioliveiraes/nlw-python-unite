@@ -1,7 +1,7 @@
 import uuid
 from src.models.repository.events_repository import EventsRepository
-from src.http_types.http_response import HttpResponse
 from src.http_types.http_request import HttpRequest
+from src.http_types.http_response import HttpResponse
 
 class EventHandler:
    def __init__(self) -> None:
@@ -22,7 +22,7 @@ class EventHandler:
       event = self.__events_repository.get_events_by_id(event_id)
 
       if not event:
-         raise Exception("Event não encontrado.")
+         raise Exception("Evento não encontrado.")
       
       event_attendees_count = self.__events_repository.count_event_attendees(event_id)
 
@@ -39,5 +39,3 @@ class EventHandler:
          },
          status_code=200
       )
-   
-# parei 00:23:00 minutos
